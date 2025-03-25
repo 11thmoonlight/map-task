@@ -41,3 +41,38 @@ document.getElementById("addMarkerBtn").addEventListener("click", function () {
     addMarker(lat, lng);
   }
 });
+
+document
+  .getElementById("downloadMarkers")
+  .addEventListener("click", function () {
+    let data = JSON.stringify(markers);
+    let blob = new Blob([data], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "markers.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+document.getElementById("uploadBtn").addEventListener("click", function () {
+  document.getElementById("uploadMarkers").click();
+});
+
+document
+  .getElementById("uploadMarkers")
+  .addEventListener("change", function (event) {
+    let file = event.target.files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      try {
+        let data = JSON.parse(e.target.result);
+        data.forEach((m) => addMarker(m.lat, m.lng));
+      } catch (error) {
+        alert("File format is incorrect");
+      }
+    };
+    reader.readAsText(file);
+  });
