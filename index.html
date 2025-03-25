@@ -16,22 +16,22 @@
     ></div>
 
     <div class="flex flex-col gap-10 justify-center items-center">
-      <div class="mt-4 flex space-x-2">
+      <div class="mt-4 flex gap-2 items-center justify-center">
         <input
           type="number"
           id="lat"
           placeholder="Latitude"
-          class="p-2 border rounded-md"
+          class="p-2 border rounded-md w-full max-w-md sm:max-w-sm"
         />
         <input
           type="number"
           id="lng"
           placeholder="Longitude"
-          class="p-2 border rounded-md"
+          class="p-2 border rounded-md w-full max-w-md sm:max-w-sm"
         />
         <button
           id="addMarkerBtn"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md"
+          class="px-4 py-2 bg-blue-600 text-white rounded-md whitespace-nowrap hover:bg-blue-500 active:scale-95 transition-transform"
         >
           Add Marker
         </button>
@@ -40,7 +40,7 @@
       <div class="mt-4 flex space-x-2">
         <button
           id="downloadMarkers"
-          class="px-4 py-2 bg-green-600 text-white rounded-md"
+          class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-500 active:scale-95 transition-transform"
         >
           Download Markers
         </button>
@@ -52,7 +52,7 @@
         />
         <button
           id="uploadBtn"
-          class="px-4 py-2 bg-yellow-600 text-white rounded-md"
+          class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 active:scale-95 transition-transform"
         >
           Upload Markers
         </button>
