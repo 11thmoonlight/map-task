@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  <body class="bg-gray-100 flex flex-col items-center justify-center p-5">
+    <h2 class="text-2xl font-bold mb-4">Map Task</h2>
+
+    <div
+      id="map"
+      class="w-full max-w-3xl h-96 border-2 border-gray-600 rounded-lg shadow-md"
+    ></div>
+
+    <div class="flex flex-col gap-10 justify-center items-center">
+      <div class="mt-4 flex space-x-2">
+        <input
+          type="number"
+          id="lat"
+          placeholder="Latitude"
+          class="p-2 border rounded-md"
+        />
+        <input
+          type="number"
+          id="lng"
+          placeholder="Longitude"
+          class="p-2 border rounded-md"
+        />
+        <button
+          id="addMarkerBtn"
+          class="px-4 py-2 bg-blue-600 text-white rounded-md"
+        >
+          Add Marker
+        </button>
+      </div>
+
+      <div class="mt-4 flex space-x-2">
+        <button
+          id="downloadMarkers"
+          class="px-4 py-2 bg-green-600 text-white rounded-md"
+        >
+          Download Markers
+        </button>
+        <input
+          type="file"
+          id="uploadMarkers"
+          accept="application/json"
+          class="hidden"
+        />
+        <button
+          id="uploadBtn"
+          class="px-4 py-2 bg-yellow-600 text-white rounded-md"
+        >
+          Upload Markers
+        </button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
